@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+	<link href="../css/generic.css" type="text/css" rel="stylesheet" />
+	<link href="../css/menu.css" type="text/css" rel="stylesheet" />
+	<link href="../css/registro-o-ingreso.css" type="text/css" rel="stylesheet" />
+	<link href='https://fonts.googleapis.com/css?family=Montserrat'
+		rel='stylesheet' />
+	<title>Registro o ingreso</title>
+</h:head>
+
+<BODY>
+	<header>
+		<div class="menu bg-white">
+			<div class="container">
+				<div class="row not-margin">
+					<div class="col-md-4 col-lg-5 not-padding">
+						<div class="cd-img-logo">
+							<a> <img alt="" src="../images/LOGO.png" style="width: 150px;" /></a>
+						</div>
+					</div>
+					<div class="col-md-8 col-lg-7">
+						<ul class="options text-right">
+							<li><a class="" href="/">Inicio</a></li>
+							<li><a class="" href="#">Nosotros</a></li>
+							<li><a class="" href="#">Dona</a></li>
+							<li><a class="" href="#">Login</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<section class="bg-white">
+		<div class="container">
+			<div class="row p-section">
+				<div class="col-md-6">
+					<div class="cd-title-form">
+						<h5>Registrate para donar</h5>
+					</div>
+					<div class="cd-form-register">
+						<h:form id="form-register">
+							<p:inputText value="#{donanteView.donante.nombresApellidos}" placeholder="Nombres y apellidos" styleClass="txtinput" />
+
+							<p:inputText value="#{donanteView.donante.email}" placeholder="Coreo electrónico" styleClass="txtinput" />
+
+							<p:inputText value="#{donanteView.donante.numeroDocumento}" placeholder="Número de documento"  styleClass="txtinput" />
+
+							<p:commandButton value="Registrar" styleClass="btn-registrar"
+								actionListener="#{donanteView.newDonante()}" />
+						</h:form>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="cd-title-form">
+						<h5>¿Eres donante registrado?</h5>
+					</div>
+					<div class="cd-form-login">
+						<h:form id="form-login">
+							<p:inputText value="#{donanteView.donante.email}" placeholder="Correo electrónico" styleClass="txtinput" />
+
+							<p:inputText value="#{donanteView.donante.numeroDocumento}" placeholder="Contraseña"  styleClass="txtinput" />
+
+							<p:commandButton value="Ingresar" styleClass="btn-ingresar" />
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BODY>
+</html>
